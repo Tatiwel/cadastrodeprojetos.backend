@@ -1,7 +1,9 @@
 from fastapi import FastAPI
+from app.api.routes import router
+from app.db.session import Base, engine
 
 app = FastAPI()
 
-@app.get("/")
-async def read_root():
-    return {"message": "Hello World"}
+Base.metadata.create_all(bind=engine)  # Cria tabelas se não existirem
+
+app.include_router(router)
