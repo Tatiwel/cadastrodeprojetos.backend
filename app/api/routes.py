@@ -26,7 +26,7 @@ def get_project(project_id: int, db: Session = Depends(get_db)):
 
 @router.post("/projects", response_model=ProjectResponse)
 def create_project(project: ProjectCreate, db: Session = Depends(get_db)):
-    db_project = Project(**project.dict())
+    db_project = Project(**project.model_dump())
     db.add(db_project)
     db.commit()
     db.refresh(db_project)
