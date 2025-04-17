@@ -1,0 +1,34 @@
+# Ignora ambientes virtuais
+.venv/
+
+# Ignora caches do Python
+__pycache__/
+*.py[cod]
+
+# Ignora dados de testes e caches de pytest
+.pytest_cache/
+
+# Ignora arquivos sensíveis
+# ignore every file that starts with .env
+.env*
+
+
+# Ignora Git
+.git/
+.gitignore
+
+# Ignora arquivos temporários de editor/IDE
+*.log
+*.swp
+*.swo
+*.bak
+.DS_Store
+.vscode/
+*.idea/
+
+# Ignora arquivos de mídia ou build não utilizados
+*.png
+*.jpg
+*.jpeg
+*.pdf
+*.zip
