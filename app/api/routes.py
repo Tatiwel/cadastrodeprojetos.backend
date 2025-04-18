@@ -32,6 +32,19 @@ def create_project(project: ProjectCreate, db: Session = Depends(get_db)):
     db.refresh(db_project)
     return db_project
 
+
+@router.get("/projects-status")
+def count_project_status(db: Session = Depends(get_db)):
+    ativos = db.query(Project).filter_by(status="Ativo").count()
+    pausados = db.query(Project).filter_by(status="Pausado").count()
+    finalizados = db.query(Project).filter_by(status="Finalizado").count()
+
+    return {
+        "Ativo": ativos,
+        "Pausado": pausados,
+        "Finalizado": finalizados
+    }
+
 @router.put("/projects/{project_id}", response_model=ProjectResponse)
 def update_project(project_id: int, update: ProjectUpdate, db: Session = Depends(get_db)):
     project = db.query(Project).get(project_id)

@@ -1,4 +1,12 @@
+<<<<<<< HEAD
+
 # 📜 Cadastro de Projetos
+
+=======
+
+# 📁 Cadastro de Projetos – Back-end com Pyton e FastAPI
+
+> > > > > > > master
 
 Este projeto é um sistema de gerenciamento de projetos desenvolvido com **FastAPI**, utilizando **PostgreSQL** como banco de dados e **SQLAlchemy** como ORM. O sistema oferece as operações básicas de CRUD para facilitar a administração de projetos.
 
