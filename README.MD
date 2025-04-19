@@ -1,14 +1,8 @@
-<<<<<<< HEAD
-
-# 📜 Cadastro de Projetos
-
-=======
-
 # 📁 Cadastro de Projetos – Back-end com Pyton e FastAPI
 
-> > > > > > > master
-
 Este projeto é um sistema de gerenciamento de projetos desenvolvido com **FastAPI**, utilizando **PostgreSQL** como banco de dados e **SQLAlchemy** como ORM. O sistema oferece as operações básicas de CRUD para facilitar a administração de projetos.
+
+---
 
 ## 🔧 Funcionalidades
 
@@ -18,16 +12,22 @@ Este projeto é um sistema de gerenciamento de projetos desenvolvido com **FastA
 - **Remoção de Projeto:** Permite excluir projetos indesejados.
 - **Visualização de Detalhes:** Mostra informações detalhadas sobre um projeto específico.
 
+---
+
 ## 👨‍💻 Tecnologias Utilizadas
 
 - **Backend:** FastAPI
 - **Banco de Dados:** PostgreSQL
 - **ORM:** SQLAlchemy
 
+---
+
 ## 🏠 Estrutura do Projeto
 
 - **Módulo Raiz:** [cadastro-de-projetos](https://github.com/Tatiwel/cadastro-de-projetos.git)
 - **Submódulo Backend:** [cadastrodeprojetos.backend](https://github.com/Tatiwel/cadastrodeprojetos.backend.git)
+
+---
 
 ## ⚙️ Configuração do Ambiente
 
