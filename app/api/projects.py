@@ -17,6 +17,18 @@ async def get_db():
 async def list_projects(db: Session = Depends(get_db)):
     return db.query(Project).all()
 
+@router.get("/projects-status")
+async def count_project_status(db: Session = Depends(get_db)):
+    ativos = db.query(Project).filter_by(status="Ativo").count()
+    pausados = db.query(Project).filter_by(status="Pausado").count()
+    finalizados = db.query(Project).filter_by(status="Finalizado").count()
+
+    return {
+        "Ativo": ativos,
+        "Pausado": pausados,
+        "Finalizado": finalizados
+    }
+
 @router.get("/{project_id}", response_model=ProjectResponse)
 async def get_project(project_id: int, db: Session = Depends(get_db)):
     project = db.query(Project).get(project_id)
@@ -31,19 +43,6 @@ async def create_project(project: ProjectCreate, db: Session = Depends(get_db)):
     db.commit()
     db.refresh(db_project)
     return db_project
-
-
-@router.get("/projects-status")
-async def count_project_status(db: Session = Depends(get_db)):
-    ativos = db.query(Project).filter_by(status="Ativo").count()
-    pausados = db.query(Project).filter_by(status="Pausado").count()
-    finalizados = db.query(Project).filter_by(status="Finalizado").count()
-
-    return {
-        "Ativo": ativos,
-        "Pausado": pausados,
-        "Finalizado": finalizados
-    }
 
 @router.put("/{project_id}", response_model=ProjectResponse)
 async def update_project(project_id: int, update: ProjectUpdate, db: Session = Depends(get_db)):
