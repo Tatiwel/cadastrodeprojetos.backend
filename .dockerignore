@@ -23,6 +23,7 @@ __pycache__/
 *.swo
 *.bak
 .DS_Store
+**/.vs
 .vscode/
 *.idea/
 
@@ -32,3 +33,24 @@ __pycache__/
 *.jpeg
 *.pdf
 *.zip
+
+**/.classpath
+**/.dockerignore
+**/.project
+**/.settings
+**/.toolstarget
+**/*.*proj.user
+**/*.dbmdl
+**/*.jfm
+**/bin
+**/charts
+**/docker-compose*
+**/compose*
+**/Dockerfile*
+**/node_modules
+**/npm-debug.log
+**/obj
+**/secrets.dev.yaml
+**/values.dev.yaml
+LICENSE
+README.md
