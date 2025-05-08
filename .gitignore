@@ -75,9 +75,9 @@ dmypy.json
 #pytest
 .pytest_cache/
 
-#envioriment variables
-.env
-.envrc
-# dotenv files
-.env
-.env.*
+# #envioriment variables
+# .env
+# .envrc
+# # dotenv files
+# .env
+# .env.*
