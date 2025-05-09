@@ -4,7 +4,7 @@ from datetime import datetime
 class ProjectBase(BaseModel):
     name: str
     description: str
-    status: str = "ativo"
+    status: str = "Ativo"
 
 class ProjectCreate(ProjectBase):
     pass
