@@ -31,7 +31,7 @@ async def count_project_status(db: Session = Depends(get_db)):
 
 @router.get("/{project_id}", response_model=ProjectResponse)
 async def get_project(project_id: int, db: Session = Depends(get_db)):
-    project = db.query(Project).get(project_id)
+    project = db.get(Project, project_id)
     if not project:
         raise HTTPException(status_code=404, detail="Projeto não encontrado")
     return project
@@ -46,7 +46,7 @@ async def create_project(project: ProjectCreate, db: Session = Depends(get_db)):
 
 @router.put("/{project_id}", response_model=ProjectResponse)
 async def update_project(project_id: int, update: ProjectUpdate, db: Session = Depends(get_db)):
-    project = db.query(Project).get(project_id)
+    project = db.get(Project, project_id)
     if not project:
         raise HTTPException(status_code=404, detail="Projeto não encontrado")
     for key, value in update.model_dump().items():
@@ -57,7 +57,7 @@ async def update_project(project_id: int, update: ProjectUpdate, db: Session = D
 
 @router.delete("/{project_id}")
 async def delete_project(project_id: int, db: Session = Depends(get_db)):
-    project = db.query(Project).get(project_id)
+    project = db.get(Project, project_id)
     if not project:
         raise HTTPException(status_code=404, detail="Projeto não encontrado")
     db.delete(project)
