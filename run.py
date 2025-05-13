@@ -4,7 +4,7 @@ import webbrowser
 
 scripts = {
     "run": "uvicorn app.main:app --reload",
-    "test-projects": "pytest -v tests/test_projects.py",
+    "test-projects": "pytest -v -s tests/test_projects.py",
     "docs": "http://127.0.0.1:8000/docs"
 }
 
